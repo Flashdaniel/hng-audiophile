@@ -11,8 +11,8 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   return (
-    <nav className="bg-black">
-      <div className=" max-w-[1110px] m-auto flex items-center justify-between px-6 py-6">
+    <nav className="bg-black md:bg-[#0F0F0F]">
+      <div className=" max-w-[1110px] m-auto border-b border-white/20 flex items-center justify-between px-6 py-6">
         <Button
           className="text-white cursor-pointer hover:bg-white/10 md:hidden"
           variant="ghost"
@@ -30,7 +30,7 @@ export default function Navbar() {
           />
         </Link>
         <ul
-          className={`fixed md:relative ${
+          className={`fixed z-1 md:relative ${
             !isMenuOpen && "hidden md:flex justify-center"
           } top-0 left-0 w-full h-full bg-black text-[13px] text-white flex flex-col justify-center items-center gap-8 text-lg font-light uppercase md:static md:flex-row md:bg-transparent md:text-black md:gap-10`}
         >
