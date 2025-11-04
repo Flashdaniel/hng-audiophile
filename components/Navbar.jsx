@@ -65,13 +65,12 @@ export default function Navbar() {
             </Link>
           </li>
         </ul>
-        <Button
-          variant="ghost"
-          size="icon"
-          className="hover:bg-white/10 cursor-pointer"
+        <Link
+          href="/checkout"
+          className="text-white cursor-pointer hover:opacity-70"
         >
           <Image src="/icon-cart.svg" alt="Cart" width={24} height={20} />
-        </Button>
+        </Link>
       </div>
     </nav>
   );

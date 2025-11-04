@@ -8,6 +8,10 @@
  * @module
  */
 
+import type * as ConvexClientProvider from "../ConvexClientProvider.js";
+import type * as cart from "../cart.js";
+import type * as orders from "../orders.js";
+
 import type {
   ApiFromModules,
   FilterApi,
@@ -22,7 +26,11 @@ import type {
  * const myFunctionReference = api.myModule.myFunction;
  * ```
  */
-declare const fullApi: ApiFromModules<{}>;
+declare const fullApi: ApiFromModules<{
+  ConvexClientProvider: typeof ConvexClientProvider;
+  cart: typeof cart;
+  orders: typeof orders;
+}>;
 declare const fullApiWithMounts: typeof fullApi;
 
 export declare const api: FilterApi<
