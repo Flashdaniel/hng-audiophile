@@ -21,7 +21,7 @@ export default function CheckoutPage() {
   const [items, setItems] = useState([]);
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
-  const createOrder = useMutation("createOrder");
+  const createOrder = useMutation("orders:createOrder");
   const router = useRouter();
 
   useEffect(() => {
@@ -80,7 +80,10 @@ export default function CheckoutPage() {
         setErrors({ submit: "Failed to create order" });
       }
     } catch (err) {
-      setErrors({ submit: err.message || String(err) });
+      console.error("Order creation error:", err);
+      setErrors({ 
+        submit: err.message || err.toString() || "Failed to create order. Please try again." 
+      });
     } finally {
       setSubmitting(false);
     }

@@ -7,7 +7,7 @@ import { useQuery } from "convex/react";
 export default function OrderPage() {
   const params = useParams();
   const id = params?.id;
-  const order = useQuery("getOrder", id);
+  const order = useQuery("orders:getOrder", id);
 
   if (!order) {
     return <main className="max-w-[1110px] m-auto px-6 py-10">Loading...</main>;
